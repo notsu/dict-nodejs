@@ -6,6 +6,7 @@ LINE BOT for finding definition and synonyms from Oxford Dictionary.
 
 1. Open LINE application.
 2. Scan the following QR code to add bot as your friend
+
 ![QR Code](dict-qrcode.png)
 
 ## Usage
