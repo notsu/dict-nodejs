@@ -1,3 +1,5 @@
+import 'babel-core/register'
+import 'babel-polyfill'
 import {} from 'dotenv/config'
 import express from 'express'
 import helmet from 'helmet'
