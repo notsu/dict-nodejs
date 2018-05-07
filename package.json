@@ -1,0 +1,60 @@
+{
+  "name": "dict-nodejs",
+  "version": "1.0.0",
+  "description": "Line Assignment 2",
+  "main": "index.js",
+  "author": "Pichet Itngam",
+  "license": "UNLICENSED",
+  "private": true,
+  "lint-staged": {
+    "**/*.{js,jsx,ts,tsx,css}": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "scripts": {
+    "dev": "cross-env NODE_ENV=local nodemon --inspect=0.0.0.0:9229 server.js --delay 0.5 --exec babel-node",
+    "build": "cross-env NODE_ENV=production babel . -s -D -d dist --ignore node_modules",
+    "start": "cross-env NODE_ENV=production node dist/server.js",
+    "lint": "eslint .",
+    "test": "jest .",
+    "migrate": "db-migrate",
+    "precommit": "lint-staged",
+    "prepush": "yarn test"
+  },
+  "dependencies": {
+    "@line/bot-sdk": "^6.0.1",
+    "babel": "^6.23.0",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "babel-plugin-lodash": "^3.3.2",
+    "babel-plugin-module-resolver": "^3.1.1",
+    "babel-preset-env": "^1.6.1",
+    "bluebird": "^3.5.1",
+    "body-parser": "^1.18.2",
+    "compression": "^1.7.2",
+    "cookie-parser": "^1.4.3",
+    "cross-env": "^5.1.4",
+    "dotenv": "^5.0.1",
+    "express": "^4.16.3",
+    "helmet": "^3.12.0",
+    "oxford-dictionary": "^1.4.1",
+    "redis": "^2.8.0"
+  },
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-import-resolver-babel-module": "^4.0.0",
+    "eslint-loader": "^2.0.0",
+    "eslint-plugin-babel": "^5.1.0",
+    "eslint-plugin-import": "^2.11.0",
+    "eslint-plugin-jest": "^21.15.1",
+    "eslint-plugin-prettier": "^2.6.0",
+    "husky": "^0.14.3",
+    "jest": "^22.4.3",
+    "lint-staged": "^7.1.0",
+    "nodemon": "^1.17.4",
+    "prettier": "^1.12.1"
+  }
+}

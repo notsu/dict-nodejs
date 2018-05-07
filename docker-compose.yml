@@ -1,0 +1,31 @@
+version: '3.1'
+
+services:
+
+  dict-nodejs:
+    image: node:8.11.1-alpine
+    networks:
+      - backend
+    ports:
+      - 3000:3000
+    volumes:
+      - ./:/src/app
+    environment:
+      - TZ=Asia/Bangkok
+    depends_on:
+      - redis
+    working_dir: /src/app
+    command: yarn dev
+
+  redis:
+    image: redis:4.0.9-alpine
+    environment:
+      - TZ=Asia/Bangkok
+    networks:
+      - backend
+
+networks:
+  backend:
+
+volumes:
+  postgres-data:

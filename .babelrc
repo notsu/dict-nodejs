@@ -1,0 +1,23 @@
+{
+  "presets": [
+    [
+      "env",
+      {
+        "target": {
+          "node": "8.11.1"
+        }
+      }
+    ]
+  ],
+  "plugins": [
+    "lodash",
+    [
+      "module-resolver",
+      {
+        "alias": {
+          "dict": "./",
+        },
+      },
+    ]
+  ]
+}
