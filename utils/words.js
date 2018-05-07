@@ -5,7 +5,7 @@ import _ from 'lodash'
  * @param  {String} message Message from user
  * @return {String|Boolean}
  */
-export const getFirstWord = (message) => {
+export const getFirstWord = message => {
   const words = String(message).split(' ')
 
   if (words.length > 0) {
@@ -20,7 +20,7 @@ export const getFirstWord = (message) => {
  * @param  {Array} messages Messages array from dictionary
  * @return {String}         Words which already joined
  */
-export const joinWord = (messages) => {
+export const joinWord = messages => {
   if (!_.isArray(messages)) {
     return false
   }

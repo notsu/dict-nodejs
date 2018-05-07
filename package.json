@@ -17,6 +17,7 @@
     "build": "cross-env NODE_ENV=production babel . -s -D -d dist --ignore node_modules",
     "start": "cross-env NODE_ENV=production node dist/server.js",
     "lint": "eslint .",
+    "lint-fix": "eslint --fix .",
     "test": "jest .",
     "migrate": "db-migrate",
     "precommit": "lint-staged",
@@ -44,6 +45,7 @@
     "redis": "^2.8.0"
   },
   "devDependencies": {
+    "babel-eslint": "^8.2.3",
     "eslint": "^4.19.1",
     "eslint-config-prettier": "^2.9.0",
     "eslint-import-resolver-babel-module": "^4.0.0",

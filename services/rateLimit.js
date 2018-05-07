@@ -7,7 +7,7 @@ import config from 'dict/config/limit'
  * @param  {String} lineId LINE's ID of user who inform search
  * @return {Boolean}       If it's not exceed, it will return true
  */
-export const rateLimit = async (lineId) => {
+export const rateLimit = async lineId => {
   if (_.isEmpty(lineId)) {
     return true
   }

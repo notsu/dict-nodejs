@@ -8,7 +8,7 @@ import { getFirstWord, joinWord } from 'dict/utils/words'
  * @param  {String} word Word
  * @return {Object}      Definition and synonyms
  */
-export const fetchOxfordAPI = async (word) => {
+export const fetchOxfordAPI = async word => {
   let definitions, synonyms
 
   try {
@@ -21,7 +21,7 @@ export const fetchOxfordAPI = async (word) => {
 
   return {
     definitions,
-    synonyms
+    synonyms,
   }
 }
 
@@ -30,7 +30,7 @@ export const fetchOxfordAPI = async (word) => {
  * @param  {Object} event Event from LINE
  * @return {Object}       Message list for sending back to users
  */
-export const getDefinitionAndsynonyms = async (event) => {
+export const getDefinitionAndsynonyms = async event => {
   const message = _.get(event, 'message.text', '')
   const word = getFirstWord(message)
 
@@ -45,8 +45,16 @@ export const getDefinitionAndsynonyms = async (event) => {
 
   const { definitions, synonyms } = result
   const messages = []
-  const definition = _.get(definitions, 'results[0].lexicalEntries[0].entries[0].senses[0].definitions[0]', false)
-  const synonym = _.get(synonyms, 'results[0].lexicalEntries[0].entries[0].senses[0].subsenses[0].synonyms', false)
+  const definition = _.get(
+    definitions,
+    'results[0].lexicalEntries[0].entries[0].senses[0].definitions[0]',
+    false
+  )
+  const synonym = _.get(
+    synonyms,
+    'results[0].lexicalEntries[0].entries[0].senses[0].subsenses[0].synonyms',
+    false
+  )
 
   if (definition) {
     messages.push({

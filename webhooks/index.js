@@ -32,7 +32,7 @@ const eventHandler = async event => {
   } else {
     messages.push({
       type: 'text',
-      text: replyMessages.nomatch
+      text: replyMessages.nomatch,
     })
   }
 
