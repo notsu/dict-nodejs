@@ -13,10 +13,14 @@ export const fetchOxfordAPI = async word => {
 
   try {
     definitions = await dictionary.definitions(word)
+  } catch (error) {
+    console.log('Definitions Error:', error)
+  }
+
+  try {
     synonyms = await dictionary.synonyms(word)
   } catch (error) {
-    console.log(error)
-    return false
+    console.log('Synonyms Error:', error)
   }
 
   return {
@@ -50,9 +54,10 @@ export const getDefinitionAndsynonyms = async event => {
     'results[0].lexicalEntries[0].entries[0].senses[0].definitions[0]',
     false
   )
+
   const synonym = _.get(
     synonyms,
-    'results[0].lexicalEntries[0].entries[0].senses[0].subsenses[0].synonyms',
+    'results[0].lexicalEntries[0].entries[0].senses[0].synonyms',
     false
   )
 
@@ -63,6 +68,11 @@ export const getDefinitionAndsynonyms = async event => {
 
 ${definition}
       `,
+    })
+  } else {
+    messages.push({
+      type: 'text',
+      text: `Sorry, we didn't found definition of this word`,
     })
   }
 
@@ -77,6 +87,11 @@ ${definition}
 
 ${allsynonyms}
       `,
+    })
+  } else {
+    messages.push({
+      type: 'text',
+      text: `Sorry, we did't found synonyms of this word`,
     })
   }
 
