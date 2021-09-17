@@ -24,8 +24,8 @@
     "prepush": "yarn test"
   },
   "dependencies": {
-    "@line/bot-sdk": "^7.3.0",
-    "axios": "^0.21.1",
+    "@line/bot-sdk": "^7.4.0",
+    "axios": "^0.21.4",
     "babel": "^6.23.0",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
@@ -47,18 +47,18 @@
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
-    "eslint": "^7.28.0",
+    "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-import-resolver-babel-module": "^5.3.1",
     "eslint-loader": "^4.0.2",
     "eslint-plugin-babel": "^5.3.1",
-    "eslint-plugin-import": "^2.23.4",
-    "eslint-plugin-jest": "^24.3.6",
-    "eslint-plugin-prettier": "^3.4.0",
-    "husky": "^6.0.0",
-    "jest": "^27.0.4",
-    "lint-staged": "^11.0.0",
-    "nodemon": "^2.0.7",
-    "prettier": "^2.3.1"
+    "eslint-plugin-import": "^2.24.2",
+    "eslint-plugin-jest": "^24.4.2",
+    "eslint-plugin-prettier": "^4.0.0",
+    "husky": "^7.0.2",
+    "jest": "^27.2.0",
+    "lint-staged": "^11.1.2",
+    "nodemon": "^2.0.12",
+    "prettier": "^2.4.1"
   }
 }
